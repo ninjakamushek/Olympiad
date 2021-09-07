@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-12 col-md-6 text-center outer">
+        <img src="\static/img/sigma.png" class="sigma inner">
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-12 col-md-12 outer">
+        <div class="row-md inner justify-content-end h-100">
+            <div class="col-10 text-center cont h-100">
+                <div class="outer">
+                    <span class="def inner">
+                        Республиканская бизнес-олимпиада
+                        для школьников 7-11 классов<br>
+                        • Все задания олимпиады будут предоставлены участникам на трех языках: казахском, русском и английском;<br>
+
+                        • Задания олимпиады охватывают сферы экономики, маркетинга и менеджмента (при подготовке рекомендуем изучить базовую теорию данных наук);
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<div class="row container-fluid mx-auto">
+    <div class="reg col-xs-9 col-sm-9 col-md-6">
+        <br/>
+        <h1 class="form" align="center">{{ title }}</h1>
+        <br/>
+        <form class="form" action="" method="post">
+            {{ form.hidden_tag() }}
+            {{ form.csrf_token }}
+            <p>
+                {{ form.email.label }}<br>
+                {{ form.email(class="form-control", type="email") }}<br>
+                {% for error in form.email.errors %}
+                    <p class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </p>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.name.label }}<br>
+                {{ form.name(class="form-control") }}<br>
+                {% for error in form.name.errors %}
+                    <p class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </p>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.surname.label }}<br>
+                {{ form.surname(class="form-control") }}<br>
+                {% for error in form.surname.errors %}
+                    <p class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </p>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.patronymic.label }}<br>
+                {{ form.patronymic(class="form-control") }}<br>
+                {% for error in form.patronymic.errors %}
+                    <p class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </p>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.city.label }}<br>
+                {{ form.city(class="form-control") }}<br>
+                {% for error in form.city.errors %}
+                    <p class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </p>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.grade.label }}<br>
+                {{ form.grade(class="form-control") }}<br>
+                {% for error in form.grade.errors %}
+                    <p class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </p>
+                {% endfor %}
+            </p>
+            <p>
+            <p>
+                {{ form.reason.label }}<br>
+                {{ form.reason(class="form-control") }}<br>
+                {% for error in form.reason.errors %}
+                    <p class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </p>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.benefit.label }}<br>
+                {{ form.benefit(class="form-control") }}<br>
+                {% for error in form.benefit.errors %}
+                    <p class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </p>
+                {% endfor %}
+            </p>
+            {% if message %}
+                <p class="alert alert-danger" role="alert">
+                    {{ message }}
+                </p>
+            {% endif %}
+            <p align="center">{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+        </form>
+    </div>
+</div>
+<br>
+<div class="row container-fluid">
+    <div class="col-xs-12-push col-sm-12-push col-md-6 text-center outer">
+        <img src="\static/img/onu.png" class="onu inner">
+    </div>
+    <div class="col-xs-12-pull col-sm-12-pull col-md-6 outer">
+        <div class="row-md inner justify-content-end h-100">
+            <div class="col-10 text-center cont h-100 outer">
+                <span class="def">
+                     «Сигма» проводится с целями:<br>
+                     • Повышения общей финансовой грамотности школьников РК;<br>
+                     • Популяризации экономических наук среди школьников;<br>
+                     • Развития творческого и критического мышления учащихся;<br>
+                     • Повышения специализированности учащихся посредством проведения обучающих вебинаров.<br>
+
+                     Олимпиада пройдет в 3 этапа:<br>
+                     • 1 этап (дата) - 20 вопросов с вариантами ответа и фиксированным проходным процентом;<br>
+                     • 2 этап (дата) - 15 вопросов с вариантами ответа и 5 открытых вопросов;<br>
+                     • 3 этап (дата) - авторский бизнес проект
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

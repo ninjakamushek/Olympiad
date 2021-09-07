@@ -1,0 +1,38 @@
+.reg {
+border: 5px solid #0492C2;
+border-radius:10px;
+box-shadow: 0 0 10px;
+margin: auto;
+}
+.form{
+padding: 20px;
+}
+.def{
+margin-top: 40px;
+font-size: 20px;
+}
+.b{
+font-weight: bold;
+font-size: 81px;
+}
+.sigma{
+border-radius:50%;
+width:90%;
+}
+span{
+vertical-align: middle;
+}
+.outer{
+display: flex;
+vertical-align: middle;
+}
+.inner{
+margin: auto;
+vertical-align: middle;
+}
+.cont{
+margin: auto;
+}
+.onu{
+width: 90%;
+}
