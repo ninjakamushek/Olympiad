@@ -32,12 +32,13 @@ def index():
 
 def run_local_remote_available():
     port = int(os.environ.get("PORT", 5000))
-    app.run(host="127.0.0.1", port=port)
+    app.run(host="0.0.0.0", port=port)
 
 
 def main():
-    db_session.global_init("db/Olympiad.sqlite")
+    db_session.global_init("db/FF.sqlite")
     run_local_remote_available()
+
 
 if __name__ == '__main__':
     main()
