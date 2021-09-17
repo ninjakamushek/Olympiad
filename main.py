@@ -15,7 +15,7 @@ def index():
     if form.validate_on_submit():
         session = db_session.create_session()
         if session.query(User).filter(User.email == form.email.data).first():
-            return render_template('registration.html', title='Регистрация',
+            return render_template('index.html', title='Регистрация',
                                    form=form, message="Такой пользователь уже есть")
         user = User()
         user.email = form.email.data
