@@ -28,6 +28,4 @@ def global_init(db_file):
 
 def create_session() -> Session:
     global __factory
-    if not __factory:
-        global_init("\\db/Olympiad.sqlite")
     return __factory()
